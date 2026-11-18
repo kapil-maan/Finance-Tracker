@@ -1,0 +1,38 @@
+{
+  "name": "finance-tracker-backend",
+  "version": "1.0.0",
+  "description": "Production-grade RESTful API for Full Stack Personal Finance Tracker with RBAC and Redis caching",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:migrate": "node src/scripts/migrate.js",
+    "db:seed": "node src/scripts/seed.js",
+    "test": "node tests/api.test.js"
+  },
+  "keywords": [
+    "finance-tracker",
+    "nodejs",
+    "express",
+    "postgresql",
+    "redis",
+    "rbac",
+    "jwt",
+    "rate-limiting"
+  ],
+  "author": "Kapil Kumar",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "express-validator": "^7.1.0",
+    "helmet": "^7.1.0",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.12.0",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
