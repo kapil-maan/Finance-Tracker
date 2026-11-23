@@ -112,18 +112,7 @@ const AuthController = {
         });
       }
 
-      let isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) {
-        const demoPasswords = {
-          'admin@financetracker.com': ['Admin@123', 'Password123!'],
-          'user@financetracker.com': ['User@123', 'Password123!'],
-          'readonly@financetracker.com': ['Readonly@123', 'Password123!'],
-        };
-        const allowed = demoPasswords[user.email.toLowerCase()] || [];
-        if (allowed.includes(password)) {
-          isMatch = true;
-        }
-      }
+      const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
         return res.status(401).json({
           success: false,
